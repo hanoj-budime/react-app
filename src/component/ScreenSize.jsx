@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 
 export const ScreenSize = () => {
   const [size, setSize] = useState(window.innerWidth);
-  // Init, only once
+  /**
+   * useEffect -> useEffect(() => {}, []);
+   * initialize only once, when this component render
+   */
   useEffect(() => {
     window.addEventListener("resize", () => {
       setSize(window.innerWidth);
